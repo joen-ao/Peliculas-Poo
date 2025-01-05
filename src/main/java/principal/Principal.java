@@ -1,15 +1,17 @@
+package principal;
+
 import calculos.CalculadoraDeTiempo;
 import calculos.FiltroRecomendacion;
 import modelos.Episodios;
 import modelos.Pelicula;
 import modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
+        Pelicula miPelicula = new Pelicula("Titanic",1997);
 
-        miPelicula.setNombre("Titanic");
-        miPelicula.setFechaDeLanzamiento(1997);
         miPelicula.setDuracion(195);
         miPelicula.setIncluido(true);
 
@@ -23,9 +25,7 @@ public class Principal {
 
         System.out.println("----------------------------------");
 
-        Serie casaDePapel = new Serie();
-        casaDePapel.setNombre("La Casa de Papel");
-        casaDePapel.setFechaDeLanzamiento(2017);
+        Serie casaDePapel = new Serie("La Casa de Papel",2017);
         casaDePapel.setTemporadas(5);
         casaDePapel.setEpisodios(10);
         casaDePapel.setMinutosPorEpisodio(50);
@@ -47,6 +47,17 @@ public class Principal {
         episodio.setSerie(casaDePapel);
 
         filtro.filtra(episodio);
+
+        var peliculaDeJoen = new Pelicula("El señor de los anillos",2001);
+        peliculaDeJoen.setDuracion(178);
+
+        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
+        listaDePeliculas.add(miPelicula);
+        listaDePeliculas.add(peliculaDeJoen);
+
+        System.out.println("Total de peliculas: " + listaDePeliculas.size());
+        System.out.println("toString de la pelicula: " + listaDePeliculas.get(1).toString());
+        System.out.println(listaDePeliculas.toString());
 
     }
 }

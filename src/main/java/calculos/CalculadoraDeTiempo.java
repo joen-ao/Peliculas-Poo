@@ -1,6 +1,5 @@
 package calculos;
 
-import modelos.Pelicula;
 import modelos.Titulo;
 
 public class CalculadoraDeTiempo {
@@ -16,7 +15,7 @@ public class CalculadoraDeTiempo {
     }
 
     public void incluye(Titulo titulo) {
-
+        System.out.println("Incluyendo la duracion en minutos de: " + titulo.getNombre());
             this.tiempoTotal += titulo.getDuracion();
 
         
